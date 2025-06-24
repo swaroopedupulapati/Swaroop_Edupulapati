@@ -368,6 +368,27 @@
                     </div>
                     <button type="submit" class="btn">Send Message</button>
                 </form>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("BjpLMpkADM2BvGX6w"); // Your EmailJS user ID or public key
+  })();
+</script>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_c34qi1j', 'template_tp5a7t2', this)
+      .then(() => {
+        alert('Message sent successfully!');
+      }, (error) => {
+        alert('Failed to send message. Error: ' + JSON.stringify(error));
+      });
+  });
+</script>
+
+
             </div>
         </div>
     </section>
@@ -375,7 +396,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">Jyothi<span>Swaroop</span></div>
+            <div class="footer-logo"><span>Swaroop</span>Edupulapati</div>
             <ul class="footer-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -537,11 +558,11 @@
         setTimeout(type, 3500);
         
         // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
+        // document.getElementById('contactForm').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     alert('Thank you for your message! I will get back to you soon.');
+        //     this.reset();
+        // });
     </script>
 </body>
 </html>
